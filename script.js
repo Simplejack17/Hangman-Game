@@ -17,6 +17,11 @@ class Game {
   generateGameBoard() {
     var numberOfSpaces = this.answer.length;
     console.log(numberOfSpaces);
+
+    for (var i = 0; i < numberOfSpaces; i++) {
+      console.log("firing");
+      $(".gameboard").append('<div class="space">' + this.answer[i] + "</div>");
+    }
   }
 }
 
