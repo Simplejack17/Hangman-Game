@@ -1,6 +1,10 @@
-// $(document).ready(function() {
-//   console.log("hello world");
-// });
+$(document).ready(function() {
+  var newGame = new Game();
+  newGame.generateWord();
+  console.log(newGame.answer);
+  newGame.generateGameBoard();
+  newGame.generateLetters();
+});
 
 var listOfWords = ["potato", "raindeer", "chair", "painting", "couch", "pants"];
 
@@ -13,7 +17,6 @@ class Game {
     var chosenWord = listOfWords[randomNumber];
     this.answer = chosenWord;
   }
-
   generateGameBoard() {
     var numberOfSpaces = this.answer.length;
     console.log(numberOfSpaces);
@@ -23,21 +26,45 @@ class Game {
       $(".gameboard").append('<div class="space">' + this.answer[i] + "</div>");
     }
   }
+  generateLetters() {
+    var alphabet = [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
+      "l",
+      "m",
+      "n",
+      "o",
+      "p",
+      "q",
+      "r",
+      "s",
+      "t",
+      "u",
+      "v",
+      "w",
+      "x",
+      "y",
+      "z"
+    ];
+    for (var i = 0; i < alphabet.length; i++) {
+      console.log("firing");
+      $(".letterContainer").append(
+        '<div class="letter">' + alphabet[i] + "</div>"
+      );
+    }
+  }
 }
-
-// function compareWord(string, userInputLetter) {
-//   console.log(string);
-// }
-// compareWord(letterInput);
 
 //step 1 need a function to generate answerWord function. = have it return a random word
 //step 2 a check letter function that checks the letter vs the answerWord
 //step 3 a check lettter function that we will put on each letter
 // create board function
-
-var newGame = new Game();
-
-newGame.generateWord();
-console.log(newGame.answer);
-
-newGame.generateGameBoard();
