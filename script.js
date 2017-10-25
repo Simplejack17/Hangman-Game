@@ -70,20 +70,21 @@ class Game {
     ];
     //creates 26 divs containing the letters in the array above.
     for (var i = 0; i < alphabet.length; i++) {
-      console.log("divs working");
+      console.log("letterContainer");
       $(".letterSetContainer").append(
-        '<div class="letterContainer"><span class="letter">' +
+        `<span class="letter" data-letter="${alphabet[i]}">` +
           alphabet[i] +
-          "</span></div>"
+          `</span>`
       );
     }
     //gives the divs "clickability" and
-    $(".letterSetContainer").click(function() {
-      console.log($(".letterSetContainer").text());
+    $(".letterSetContainer").click(function(e) {
+      let letter = $(e.target).data("letter");
+      console.log(letter);
+      // we want to look at the event target to get the current letter
     });
   }
 }
-
 //add a click funtiom (event linstern) to each letter div. (on click call this function)
 //want the function to set this.letter to currentGuess.
 // make another function to make sure the letter thats clicked is in the string

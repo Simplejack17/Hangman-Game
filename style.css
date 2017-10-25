@@ -13,7 +13,7 @@
   margin: 10px;
   display: inline-block;
 }
-.letterContainer {
+.letter {
   height: 30px;
   width: 30px;
   border: 1px solid grey;
@@ -26,8 +26,6 @@
 }
 .letterSetContainer {
   padding-top: 50px;
-}
-.letter {
 }
 h1 {
   text-align: center;
