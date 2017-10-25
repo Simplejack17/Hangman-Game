@@ -87,12 +87,14 @@ class Game {
     $(".letterSetContainer").click(function(e) {
       let letter = $(e.target).data("letter");
       // console.log();
-      console.log(chosenWord);
-      console.log(letter);
       console.log(chosenWord.includes(letter));
     });
   }
 }
+//now that when i click on a letter it will return true or false,
+//we need to set the letters to .hide? and when we click the letter,
+// it will .show
+
 // frame1 = function() {
 //   draw(0, 150, 150, 150);
 // };
@@ -129,11 +131,4 @@ class Game {
 //   draw(60, 70, 20, 100);
 // };
 
-//now that my click function is showing what letter i am clicking,
-//we need to find a way to compare it to the letters in the answer
-//create a seperate array that holds our "answer/spaces"? when the new array is made? is there a way to make every letter a string?
-//create a seperate array that holds the buttons we click??
-//compare arrays?
-
-//add a click funtiom (event linstern) to each letter div. (on click call this function)
 //want the function to set this.letter to currentGuess.

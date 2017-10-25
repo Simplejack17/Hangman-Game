@@ -1,3 +1,6 @@
+body {
+  background-color: #dddddd;
+}
 .gameboard {
   padding-top: 5px;
   margin: 1px;
@@ -32,7 +35,19 @@ h1 {
   text-align: center;
   font-size: 40;
 }
-h2 {
+#hangmanPost {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 330px;
+  margin-right: auto;
+  display: block;
+  background-color: #111111;
 }
-body {
+#hangmanPost2 {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 430px;
+  margin-right: auto;
+  display: block;
+  background-color: #111111;
 }
