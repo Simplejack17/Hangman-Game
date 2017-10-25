@@ -19,7 +19,7 @@
   border: 1px solid grey;
   color: white;
   display: inline-block;
-  margin: 10px;
+  margin: 0px;
   text-align: center;
   padding-top: 10px;
   background-color: green;
@@ -27,6 +27,7 @@
 .letterSetContainer {
   padding-top: 50px;
 }
+
 h1 {
   text-align: center;
   font-size: 40;
