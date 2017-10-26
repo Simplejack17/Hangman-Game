@@ -9,12 +9,16 @@
   <body>
     <h1> Hangman </h1>
     <h2></h2>
-    <canvas id="hangmanPost" width="100" height="1"
-    style="border:1px solid #c3c3c3;">
-    </canvas>
-    <canvas id="hangmanPost2" width="1" height="150"
-    style="border:1px solid #c3c3c3;">
-    </canvas>
+    <div id='bodyParts'>
+      <div id="hangmanPost"></div>
+      <div id="hangmanPost2"></div>
+      <div id="head" class="hidden"></div>
+      <div id="body" class="hidden"></div>
+      <div id="rightArm" class="hidden"></div>
+      <div id="leftArm" class="hidden"></div>
+      <div id="rightLeg" class="hidden"></div>
+      <div id="leftLeg" class="hidden"></div>
+  </div>
     <div class="gameboard"></div>
     <div class= "letterSetContainer"></div>
     <script src="script.js"></script>
