@@ -16,7 +16,12 @@ var listOfWords = [
   'couch',
   'pants',
   'turtle',
-  'football'
+  'football',
+  'green',
+  'website',
+  'apple',
+  'google',
+  'yellow'
 ]
 // so i can compare letters.
 var chosenWord
@@ -113,8 +118,12 @@ class Game {
       this.correctLetters += numCorrectLetters
 
       if (this.correctLetters === chosenWord.length) {
-        alert('game won!')
-        this.gameReset()
+        setTimeout(function() {
+          alert('You won!')
+        }, 300)
+        setTimeout(function() {
+          location.reload()
+        }, 2000)
       }
       $('*[data-letter="' + letter + '"]').removeClass('hidden')
     } else {
@@ -137,10 +146,13 @@ class Game {
       $('#rightLeg').removeClass('hidden')
     } else if (this.turnsRemaining === 1) {
       $('#leftLeg').removeClass('hidden')
-      alert('You lost')
-      setTimeout(this.gameReset(), 9000)
+      setTimeout(function() {
+        alert('You lost')
+      }, 500)
+      setTimeout(function() {
+        location.reload()
+      }, 500)
     } else {
-      alert('error. please refresh the page.')
     }
   }
 
