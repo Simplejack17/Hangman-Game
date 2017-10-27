@@ -1,9 +1,9 @@
 $(document).ready(function() {
   //
-  var newGame = new Game() //creates a new instance of a game
-  newGame.generateWord() //generates a random word from our listOfWords array.
-  console.log(newGame.answer) //calls a new instance of our game with the generateWord in it
-  newGame.generateGameBoard() //this is the empty squares that refer to the number of letters in this.answer
+  var newGame = new Game() // creates a new instance of a game
+  newGame.generateWord() // generates a random word from our listOfWords array.
+  console.log(newGame.answer) // calls a new instance of our game with the generateWord in it
+  newGame.generateGameBoard() // this is the empty squares that refer to the number of letters in this.answer
   newGame.generateLetters() // calls out make generateLetters function to create buttons
 })
 
@@ -18,9 +18,9 @@ var listOfWords = [
   'turtle',
   'football'
 ]
-//so i can compare letters.
+// so i can compare letters.
 var chosenWord
-//creates a new instance of a game
+// creates a new instance of a game
 class Game {
   constructor() {
     this.answer = ''
@@ -28,17 +28,17 @@ class Game {
     this.correctLetters = 0
     this.gameStatus = 'In progress'
   }
-  //picking a random word out of the listOfWords
+  // picking a random word out of the listOfWords
   generateWord() {
     var randomNumber = Math.floor(Math.random() * listOfWords.length)
     chosenWord = listOfWords[randomNumber]
     this.answer = chosenWord
   }
-  //this is the empty squares that refer to the number of letters in this.answer
+  // this is the empty squares that refer to the number of letters in this.answer
   generateGameBoard() {
     var numberOfSpaces = this.answer.length
     console.log(numberOfSpaces)
-    //counting how many letters there are in this.answer and creating that many 'spaces'
+    // counting how many letters there are in this.answer and creating that many 'spaces'
     for (var i = 0; i < numberOfSpaces; i++) {
       console.log('number of _ is working')
       $('.gameboard').append(
@@ -51,7 +51,7 @@ class Game {
     }
     $('.spaceLetter').addClass('hidden')
   }
-  //puts the divs on the webpage and labeled
+  // puts the divs on the webpage and labeled
   generateLetters() {
     var alphabet = [
       'a',
@@ -81,7 +81,7 @@ class Game {
       'y',
       'z'
     ]
-    //creates 26 divs containing the letters in the array above.
+    // creates 26 divs containing the letters in the array above.
     for (var i = 0; i < alphabet.length; i++) {
       console.log('letterContainer')
       $('.letterSetContainer').append(
@@ -93,16 +93,17 @@ class Game {
       )
     }
 
-    //gives the divs "clickability" and tells you what button you are clicking on. Will also return true or false if the letter is in "chosenWord"
-    $('.letter').click(e => {
+    // gives the divs "clickability" and tells you what button you are clicking on. Will also return true or false if the letter is in "chosenWord"
+    $('.letter').one('click', e => {
       let letter = $(e.target).data('letter')
-      $(this).attr('disabled', 'disabled')
-      $(this).css('background-color', 'red')
+      console.log($(this))
+      $(e.target).attr('disabled', 'disabled')
+      $(e.target).css('background-color', 'red')
       this.checkLetter(letter)
     })
   }
 
-  //this function compares the letter and if they are true... and if they are false they...
+  // this function compares the letter and if they are true... and if they are false they...
   checkLetter(letter) {
     let compareLetter = chosenWord.includes(letter)
     console.log('Chosen letter: ' + letter)
@@ -122,7 +123,7 @@ class Game {
       this.drawBodyPart()
     }
   }
-  //draw a body part for every -1 turn remaining.
+  // draw a body part for every -1 turn remaining.
   drawBodyPart() {
     if (this.turnsRemaining === 6) {
       $('#head').removeClass('hidden')
@@ -137,7 +138,7 @@ class Game {
     } else if (this.turnsRemaining === 1) {
       $('#leftLeg').removeClass('hidden')
       alert('You lost')
-      // this.gameReset()
+      setTimeout(this.gameReset(), 9000)
     } else {
       alert('error. please refresh the page.')
     }

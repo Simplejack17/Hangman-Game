@@ -61,12 +61,6 @@ h1 {
   height: 300px;
   width: 275px;
   margin: auto;
-  background-color: grey;
-  /*
-    1. explicit height and width
-    2. position each body part relative to #bodyParts
-    3. bring hangman posts in to #bodyParts
-  */
 }
 
 #head {
