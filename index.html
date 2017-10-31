@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" defer></script>
+    <script src="script.js" defer></script>
+    <!-- Since you properly used a document.ready, you can put your script tag in the head.
+    However, use defer attributes to gain speed on page loading. -->
   </head>
   <body>
     <h1> Hangman </h1>
     <h2></h2>
-    <div id='bodyParts'>
+    <!-- If this h2 is unused, get rid of it -->
+    <div id="bodyParts">
+    <!-- In HTML, always use double quotations -->
       <div id="hangmanPost"></div>
       <div id="hangmanPost2"></div>
       <div id="head" class="hidden"></div>
@@ -18,10 +23,16 @@
       <div id="leftArm" class="hidden"></div>
       <div id="rightLeg" class="hidden"></div>
       <div id="leftLeg" class="hidden"></div>
-  </div>
+    </div>
     <div class="gameboard"></div>
     <div class= "letterSetContainer"></div>
-    <script src="script.js"></script>
-  </body>
+    <!-- Generally, try to use hyphenated casing for class and id names in your HTML / CSS
+    so as to make it distinct from your JS:
 
+    letterSetContainer -> letter-set-container
+
+    Also, consider looking into using a CSS
+    naming methodology like BEM: https://css-tricks.com/bem-101/ -->
+    <!-- Overall, good semantic naming though -->
+  </body>
 </html>
