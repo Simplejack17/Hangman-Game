@@ -9,6 +9,7 @@ body {
     ),
     linear-gradient(#eee 0.1em, transparent 0.1em);
   background-size: 100% 1.2em;
+  /*Nice effect with the background*/
 }
 .gameboard {
   padding-top: 5px;
@@ -25,8 +26,12 @@ body {
   margin: 10px;
   display: inline-block;
 }
-#letterSetContainer {
-  padding-top: 50px;
+/*Use `.` for classes, not `#`. Also, consider adding some padding / using flexbox
+to arrange your buttons:*/
+.letterSetContainer {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -124,6 +129,9 @@ h1 {
   left: 56px;
 }
 .letter {
+  width: 80px;
+  margin: 5px;
+  /*To make all letters consistent dimensions*/
   background-color: #44c767;
   -moz-border-radius: 28px;
   -webkit-border-radius: 28px;
@@ -140,3 +148,12 @@ h1 {
   text-align: center;
   line-height: 1px;
 }
+
+/*Very good job using semantic naming / organization in your CSS. A few small improvements:
+- Reorder the selectors above from least specific to most specific
+  - General element selectors first
+  - Then all class selectors
+  - Then all id selectors
+- Consider breaking up some of your CSS code into smaller classes and then apply
+your styles by giving elements multiple classes that, together, define what they
+should look like. A great methodology for this is BEM: https://css-tricks.com/bem-101/*/
